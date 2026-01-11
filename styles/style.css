@@ -1,4 +1,4 @@
-/* RESET BÁSICO */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -7,23 +7,23 @@
 
 /* FUNDO GERAL */
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: #000;
-  color: #fff;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(180deg, #070b14, #0b1326);
+  color: #ffffff;
   padding: 20px;
 }
 
 /* TÍTULO */
 h1 {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   font-size: 28px;
-  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 /* FILTROS */
 .filtros {
-  max-width: 700px;
+  max-width: 720px;
   margin: 0 auto 25px auto;
   display: flex;
   flex-direction: column;
@@ -31,14 +31,19 @@ h1 {
 }
 
 .filtros input {
-  padding: 10px;
+  padding: 12px;
   font-size: 14px;
   border-radius: 4px;
-  border: none;
-  outline: none;
+  border: 1px solid #c9a24d;
+  background: #070b14;
+  color: #ffffff;
 }
 
-/* BOTÕES */
+.filtros input::placeholder {
+  color: #b5b5b5;
+}
+
+/* AÇÕES */
 .acoes {
   display: flex;
   gap: 10px;
@@ -47,59 +52,65 @@ h1 {
 
 .acoes button {
   flex: 1;
-  padding: 10px;
-  background: #a89c6d;
+  padding: 12px;
+  background: linear-gradient(135deg, #c9a24d, #e6c27a);
   border: none;
-  color: #000;
+  color: #070b14;
   font-weight: bold;
   cursor: pointer;
   border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .acoes button:hover {
-  background: #c4b47a;
+  opacity: 0.9;
 }
 
 /* TABELA */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
+  margin-top: 25px;
+  background: #070b14;
 }
 
 /* CABEÇALHO */
 thead th {
-  background: #a89c6d;
-  color: #000;
-  padding: 12px;
+  background: linear-gradient(135deg, #c9a24d, #e6c27a);
+  color: #070b14;
+  padding: 14px;
   text-align: left;
   font-weight: bold;
+  text-transform: uppercase;
+  font-size: 13px;
 }
 
 /* LINHAS */
 tbody tr {
-  border-bottom: 1px dotted #555;
+  border-bottom: 1px dotted #2a2f45;
 }
 
 tbody tr:hover {
-  background: #111;
+  background: #0b1326;
 }
 
 /* CÉLULAS */
 td {
-  padding: 10px;
+  padding: 12px;
+  font-size: 14px;
 }
 
-/* COLUNA DE NOME EM DESTAQUE */
+/* NOME DO IMÓVEL EM DESTAQUE */
 td:first-child {
-  color: #a89c6d;
+  color: #e6c27a;
   font-weight: bold;
 }
 
 /* FOOTER */
 footer {
-  margin-top: 30px;
+  margin-top: 35px;
   text-align: center;
-  color: #aaa;
-  font-size: 14px;
+  color: #b5b5b5;
+  font-size: 13px;
 }
