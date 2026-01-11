@@ -1,4 +1,4 @@
-const dados = [
+let dados = [
   {
     nome: "Aloha",
     bairro: "Barra da Tijuca",
@@ -25,6 +25,20 @@ const inputNome = document.getElementById("search-nome");
 const inputBairro = document.getElementById("search-bairro");
 const inputValor = document.getElementById("search-valor");
 const inputTipologia = document.getElementById("search-tipologia");
+
+const btnLimpar = document.getElementById("limpar");
+const btnOrdenar = document.getElementById("ordenar");
+
+let ordemCrescente = true;
+
+function valorNumerico(valor) {
+  return Number(
+    valor.replace("R$", "")
+         .replace(/\./g, "")
+         .replace(",", ".")
+         .trim()
+  );
+}
 
 function renderTabela(lista) {
   tbody.innerHTML = "";
@@ -58,6 +72,25 @@ function filtrar() {
 
   renderTabela(filtrados);
 }
+
+btnLimpar.addEventListener("click", () => {
+  inputNome.value = "";
+  inputBairro.value = "";
+  inputValor.value = "";
+  inputTipologia.value = "";
+  renderTabela(dados);
+});
+
+btnOrdenar.addEventListener("click", () => {
+  dados.sort((a, b) => {
+    const v1 = valorNumerico(a.valor);
+    const v2 = valorNumerico(b.valor);
+    return ordemCrescente ? v1 - v2 : v2 - v1;
+  });
+
+  ordemCrescente = !ordemCrescente;
+  filtrar();
+});
 
 [inputNome, inputBairro, inputValor, inputTipologia]
   .forEach(input => input.addEventListener("input", filtrar));

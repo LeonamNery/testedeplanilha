@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lista de Imóveis</title>
 
-  <!-- CSS -->
   <link rel="stylesheet" href="./styles/style.css">
   <link rel="stylesheet" href="./styles/responsive.css">
 </head>
@@ -18,6 +17,11 @@
     <input type="text" id="search-bairro" placeholder="Pesquisar por bairro">
     <input type="text" id="search-valor" placeholder="Pesquisar por valor">
     <input type="text" id="search-tipologia" placeholder="Pesquisar por tipologia">
+
+    <div class="acoes">
+      <button id="limpar">Limpar filtros</button>
+      <button id="ordenar">Ordenar por valor ⬆⬇</button>
+    </div>
   </div>
 
   <table>
@@ -29,16 +33,13 @@
         <th>Tipologia</th>
       </tr>
     </thead>
-    <tbody id="tabela-dados">
-      <!-- JS renderiza -->
-    </tbody>
+    <tbody id="tabela-dados"></tbody>
   </table>
 
   <footer>
-    <p>Coded by Você</p>
+    <p>Coded by Leonam Nery</p>
   </footer>
 
-  <!-- JS -->
   <script src="./scripts/script.js"></script>
 </body>
 </html>
