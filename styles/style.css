@@ -73,6 +73,7 @@ td {
 
 tbody tr {
   border-bottom: 1px dotted #2a2f45;
+  text-align: center;
 }
 
 tbody tr:hover {
