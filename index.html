@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lista de Imóveis</title>
 
   <!-- CSS -->
-  <link rel="stylesheet" href="./styles/style.css" />
-  <link rel="stylesheet" href="./styles/responsive.css" />
+  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="./styles/responsive.css">
 </head>
 <body>
 
   <h1>Lista de Imóveis</h1>
 
   <div class="filtros">
-    <input type="text" id="search-nome" placeholder="Pesquisar por nome" />
-    <input type="text" id="search-bairro" placeholder="Pesquisar por bairro" />
-    <input type="text" id="search-valor" placeholder="Pesquisar por valor" />
-    <input type="text" id="search-tipologia" placeholder="Pesquisar por tipologia" />
+    <input type="text" id="search-nome" placeholder="Pesquisar por nome">
+    <input type="text" id="search-bairro" placeholder="Pesquisar por bairro">
+    <input type="text" id="search-valor" placeholder="Pesquisar por valor">
+    <input type="text" id="search-tipologia" placeholder="Pesquisar por tipologia">
   </div>
 
-  <table id="table">
+  <table>
     <thead>
       <tr>
         <th>Nome do Imóvel</th>
@@ -30,7 +30,7 @@
       </tr>
     </thead>
     <tbody id="tabela-dados">
-      <!-- JS injeta as linhas aqui -->
+      <!-- JS renderiza -->
     </tbody>
   </table>
 

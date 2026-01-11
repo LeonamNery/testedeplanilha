@@ -3,25 +3,19 @@ const dados = [
     nome: "Aloha",
     bairro: "Barra da Tijuca",
     valor: "R$ 1.110.000",
-    tipologia: "2 quartos"
+    tipologia: "2qts"
   },
   {
     nome: "Alphagreen",
     bairro: "Barra da Tijuca",
     valor: "R$ 1.100.000",
-    tipologia: "2 quartos"
+    tipologia: "2qts"
   },
   {
     nome: "Barra Bali - Beach",
     bairro: "Barra da Tijuca",
     valor: "R$ 760.000",
-    tipologia: "3 quartos"
-  },
-  {
-    nome: "Park Premium",
-    bairro: "Recreio",
-    valor: "R$ 690.000",
-    tipologia: "2 quartos"
+    tipologia: "3qts"
   }
 ];
 
@@ -56,16 +50,15 @@ function filtrar() {
   const tipologia = inputTipologia.value.toLowerCase();
 
   const filtrados = dados.filter(item =>
-    item.nome.toLowerCase().includes(nome) &&
-    item.bairro.toLowerCase().includes(bairro) &&
-    item.valor.toLowerCase().includes(valor) &&
-    item.tipologia.toLowerCase().includes(tipologia)
+    (nome === "" || item.nome.toLowerCase().includes(nome)) &&
+    (bairro === "" || item.bairro.toLowerCase().includes(bairro)) &&
+    (valor === "" || item.valor.toLowerCase().includes(valor)) &&
+    (tipologia === "" || item.tipologia.toLowerCase().includes(tipologia))
   );
 
   renderTabela(filtrados);
 }
 
-// eventos
 [inputNome, inputBairro, inputValor, inputTipologia]
   .forEach(input => input.addEventListener("input", filtrar));
 
