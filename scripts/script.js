@@ -1,4 +1,4 @@
-let dados = [
+const dadosOriginais = [
   {
     nome: "Aloha",
     bairro: "Barra da Tijuca",
@@ -19,6 +19,9 @@ let dados = [
   }
 ];
 
+let dadosVisiveis = [...dadosOriginais];
+let ordemCrescente = true;
+
 const tbody = document.getElementById("tabela-dados");
 
 const inputNome = document.getElementById("search-nome");
@@ -28,8 +31,6 @@ const inputTipologia = document.getElementById("search-tipologia");
 
 const btnLimpar = document.getElementById("limpar");
 const btnOrdenar = document.getElementById("ordenar");
-
-let ordemCrescente = true;
 
 function valorNumerico(valor) {
   return Number(
@@ -45,55 +46,55 @@ function renderTabela(lista) {
 
   lista.forEach(item => {
     const tr = document.createElement("tr");
-
     tr.innerHTML = `
       <td>${item.nome}</td>
       <td>${item.bairro}</td>
       <td>${item.valor}</td>
       <td>${item.tipologia}</td>
     `;
-
     tbody.appendChild(tr);
   });
 }
 
-function filtrar() {
+function aplicarFiltros() {
   const nome = inputNome.value.toLowerCase();
   const bairro = inputBairro.value.toLowerCase();
   const valor = inputValor.value.toLowerCase();
   const tipologia = inputTipologia.value.toLowerCase();
 
-  const filtrados = dados.filter(item =>
+  dadosVisiveis = dadosOriginais.filter(item =>
     (nome === "" || item.nome.toLowerCase().includes(nome)) &&
     (bairro === "" || item.bairro.toLowerCase().includes(bairro)) &&
     (valor === "" || item.valor.toLowerCase().includes(valor)) &&
     (tipologia === "" || item.tipologia.toLowerCase().includes(tipologia))
   );
 
-  renderTabela(filtrados);
+  renderTabela(dadosVisiveis);
 }
 
-btnLimpar.addEventListener("click", () => {
-  inputNome.value = "";
-  inputBairro.value = "";
-  inputValor.value = "";
-  inputTipologia.value = "";
-  renderTabela(dados);
-});
-
 btnOrdenar.addEventListener("click", () => {
-  dados.sort((a, b) => {
+  dadosVisiveis.sort((a, b) => {
     const v1 = valorNumerico(a.valor);
     const v2 = valorNumerico(b.valor);
     return ordemCrescente ? v1 - v2 : v2 - v1;
   });
 
   ordemCrescente = !ordemCrescente;
-  filtrar();
+  renderTabela(dadosVisiveis);
+});
+
+btnLimpar.addEventListener("click", () => {
+  inputNome.value = "";
+  inputBairro.value = "";
+  inputValor.value = "";
+  inputTipologia.value = "";
+
+  dadosVisiveis = [...dadosOriginais];
+  renderTabela(dadosVisiveis);
 });
 
 [inputNome, inputBairro, inputValor, inputTipologia]
-  .forEach(input => input.addEventListener("input", filtrar));
+  .forEach(input => input.addEventListener("input", aplicarFiltros));
 
 // inicialização
-renderTabela(dados);
+renderTabela(dadosOriginais);
