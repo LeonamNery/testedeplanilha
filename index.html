@@ -1,35 +1,70 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <title>Planilha de Opções</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Opções para parceria</title>
 
-    <h1>📊 Planilha de Opções</h1>
+    <link rel="stylesheet" href="./src/styles/style.css" />
+    <link rel="stylesheet" href="./src/styles/responsive.css" />
+  </head>
 
-    <input 
-        type="text" 
-        id="filtro" 
-        placeholder="🔍 Pesquisar por nome, bairro ou tipologia..."
-    >
+  <body>
+    <h1>Lista de Imóveis</h1>
 
-    <table>
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Nome</th>
-                <th>Bairro</th>
-                <th>Valor</th>
-                <th>Tipologia</th>
-            </tr>
-        </thead>
-        <tbody id="tabela-dados">
-            <!-- Dados inseridos via JavaScript -->
-        </tbody>
+    <div class="input-container">
+      <input type="text" id="search-nome" placeholder="Pesquisar por nome" />
+    </div>
+
+    <div class="input-container">
+      <input type="text" id="search-bairro" placeholder="Pesquisar por bairro" />
+    </div>
+
+    <div class="input-container">
+      <input type="text" id="search-valor" placeholder="Pesquisar por valor" />
+    </div>
+
+    <div class="input-container">
+      <input type="text" id="search-tipologia" placeholder="Pesquisar por tipologia" />
+    </div>
+
+    <table id="table">
+      <thead>
+        <tr>
+          <th>Nome do Imóvel</th>
+          <th>Bairro</th>
+          <th>Valor</th>
+          <th>Tipologia</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="#" target="_blank">Aloha</a></td>
+          <td>Barra da Tijuca</td>
+          <td>R$ 1.110.000</td>
+          <td>2qts</td>
+        </tr>
+
+        <tr>
+          <td><a href="#" target="_blank">Alphagreen</a></td>
+          <td>Barra da Tijuca</td>
+          <td>R$ 1.100.000</td>
+          <td>2qts</td>
+        </tr>
+
+        <tr>
+          <td><a href="#" target="_blank">Barra Bali - Beach</a></td>
+          <td>Barra da Tijuca</td>
+          <td>R$ 760.000</td>
+          <td>3qts</td>
+        </tr>
+      </tbody>
     </table>
 
-    <script src="script.js"></script>
-</body>
+    <footer>
+      <p>Coded by Você</p>
+    </footer>
+
+    <script src="./src/scripts/script.js"></script>
+  </body>
 </html>
