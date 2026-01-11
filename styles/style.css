@@ -8,9 +8,13 @@
 
 body {
   font-family: "Segoe UI", Arial, sans-serif;
-  background: linear-gradient(180deg, #070b14, #0b1326);
+  background: linear-gradient(
+    180deg,
+    #070f26 0%,
+    #050b1a 50%,
+    #070f26 100%
+  );
   color: #ffffff;
-  padding: 20px;
 }
 
 .topo {
