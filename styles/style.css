@@ -4,6 +4,8 @@
   box-sizing: border-box;
 }
 
+
+
 body {
   font-family: "Segoe UI", Arial, sans-serif;
   background: linear-gradient(180deg, #070b14, #0b1326);
@@ -64,10 +66,13 @@ thead th {
   background: #c9a24d;
   color: #070b14;
   padding: 14px;
+  text-align: center;
 }
 
 td {
   padding: 12px;
+  font-size: 16px;
+  text-align: center;
 }
 
 tbody tr {
