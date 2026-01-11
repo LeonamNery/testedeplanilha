@@ -1,62 +1,73 @@
 const dados = [
-    {
-        nome: "Aloha",
-        bairro: "Barra da Tijuca",
-        valor: "R$ 1.110.000",
-        tipologia: "2 quartos"
-    },
-    {
-        nome: "Alphagreen",
-        bairro: "Barra da Tijuca",
-        valor: "R$ 1.100.000",
-        tipologia: "2 quartos"
-    },
-    {
-        nome: "Barra Bali - Beach",
-        bairro: "Barra da Tijuca",
-        valor: "R$ 760.000",
-        tipologia: "3 quartos"
-    },
-    {
-        nome: "Park Premium",
-        bairro: "Recreio",
-        valor: "R$ 690.000",
-        tipologia: "2 quartos"
-    }
+  {
+    nome: "Aloha",
+    bairro: "Barra da Tijuca",
+    valor: "R$ 1.110.000",
+    tipologia: "2 quartos"
+  },
+  {
+    nome: "Alphagreen",
+    bairro: "Barra da Tijuca",
+    valor: "R$ 1.100.000",
+    tipologia: "2 quartos"
+  },
+  {
+    nome: "Barra Bali - Beach",
+    bairro: "Barra da Tijuca",
+    valor: "R$ 760.000",
+    tipologia: "3 quartos"
+  },
+  {
+    nome: "Park Premium",
+    bairro: "Recreio",
+    valor: "R$ 690.000",
+    tipologia: "2 quartos"
+  }
 ];
 
 const tbody = document.getElementById("tabela-dados");
-const filtro = document.getElementById("filtro");
+
+const inputNome = document.getElementById("search-nome");
+const inputBairro = document.getElementById("search-bairro");
+const inputValor = document.getElementById("search-valor");
+const inputTipologia = document.getElementById("search-tipologia");
 
 function renderTabela(lista) {
-    tbody.innerHTML = "";
+  tbody.innerHTML = "";
 
-    lista.forEach((item, index) => {
-        const tr = document.createElement("tr");
+  lista.forEach(item => {
+    const tr = document.createElement("tr");
 
-        tr.innerHTML = `
-            <td>${index + 1}</td>
-            <td>${item.nome}</td>
-            <td>${item.bairro}</td>
-            <td>${item.valor}</td>
-            <td>${item.tipologia}</td>
-        `;
+    tr.innerHTML = `
+      <td>${item.nome}</td>
+      <td>${item.bairro}</td>
+      <td>${item.valor}</td>
+      <td>${item.tipologia}</td>
+    `;
 
-        tbody.appendChild(tr);
-    });
+    tbody.appendChild(tr);
+  });
 }
 
-filtro.addEventListener("input", () => {
-    const texto = filtro.value.toLowerCase();
+function filtrar() {
+  const nome = inputNome.value.toLowerCase();
+  const bairro = inputBairro.value.toLowerCase();
+  const valor = inputValor.value.toLowerCase();
+  const tipologia = inputTipologia.value.toLowerCase();
 
-    const filtrados = dados.filter(item =>
-        item.nome.toLowerCase().includes(texto) ||
-        item.bairro.toLowerCase().includes(texto) ||
-        item.tipologia.toLowerCase().includes(texto)
-    );
+  const filtrados = dados.filter(item =>
+    item.nome.toLowerCase().includes(nome) &&
+    item.bairro.toLowerCase().includes(bairro) &&
+    item.valor.toLowerCase().includes(valor) &&
+    item.tipologia.toLowerCase().includes(tipologia)
+  );
 
-    renderTabela(filtrados);
-});
+  renderTabela(filtrados);
+}
 
-// Inicializa tabela
+// eventos
+[inputNome, inputBairro, inputValor, inputTipologia]
+  .forEach(input => input.addEventListener("input", filtrar));
+
+// inicialização
 renderTabela(dados);

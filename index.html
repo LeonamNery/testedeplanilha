@@ -1,72 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Opções para parceria</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lista de Imóveis</title>
 
-    <link rel="stylesheet" href="./styles/style.css" />
-    <link rel="stylesheet" href="./styles/responsive.css" />
-  </head>
+  <!-- CSS -->
+  <link rel="stylesheet" href="./styles/style.css" />
+  <link rel="stylesheet" href="./styles/responsive.css" />
+</head>
+<body>
 
-  <body>
-    <h1>Lista de Imóveis</h1>
+  <h1>Lista de Imóveis</h1>
 
-    <div class="input-container">
-      <input type="text" id="search-nome" placeholder="Pesquisar por nome" />
-    </div>
+  <div class="filtros">
+    <input type="text" id="search-nome" placeholder="Pesquisar por nome" />
+    <input type="text" id="search-bairro" placeholder="Pesquisar por bairro" />
+    <input type="text" id="search-valor" placeholder="Pesquisar por valor" />
+    <input type="text" id="search-tipologia" placeholder="Pesquisar por tipologia" />
+  </div>
 
-    <div class="input-container">
-      <input type="text" id="search-bairro" placeholder="Pesquisar por bairro" />
-    </div>
+  <table id="table">
+    <thead>
+      <tr>
+        <th>Nome do Imóvel</th>
+        <th>Bairro</th>
+        <th>Valor</th>
+        <th>Tipologia</th>
+      </tr>
+    </thead>
+    <tbody id="tabela-dados">
+      <!-- JS injeta as linhas aqui -->
+    </tbody>
+  </table>
 
-    <div class="input-container">
-      <input type="text" id="search-valor" placeholder="Pesquisar por valor" />
-    </div>
+  <footer>
+    <p>Coded by Você</p>
+  </footer>
 
-    <div class="input-container">
-      <input type="text" id="search-tipologia" placeholder="Pesquisar por tipologia" />
-    </div>
-
-    <table id="table">
-      <thead>
-        <tr>
-          <th>Nome do Imóvel</th>
-          <th>Bairro</th>
-          <th>Valor</th>
-          <th>Tipologia</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><a href="#" target="_blank">Aloha</a></td>
-          <td>Barra da Tijuca</td>
-          <td>R$ 1.110.000</td>
-          <td>2qts</td>
-        </tr>
-
-        <tr>
-          <td><a href="#" target="_blank">Alphagreen</a></td>
-          <td>Barra da Tijuca</td>
-          <td>R$ 1.100.000</td>
-          <td>2qts</td>
-        </tr>
-
-        <tr>
-          <td><a href="#" target="_blank">Barra Bali - Beach</a></td>
-          <td>Barra da Tijuca</td>
-          <td>R$ 760.000</td>
-          <td>3qts</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <footer>
-      <p>Coded by Você</p>
-    </footer>
-
-    <script src="./scripts/script.js"></script>
-  </body>
+  <!-- JS -->
+  <script src="./scripts/script.js"></script>
+</body>
 </html>
-
-

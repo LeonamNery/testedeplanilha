@@ -3,24 +3,23 @@
     display: block;
   }
 
-  th {
+  thead {
     display: none;
   }
 
   tr {
     margin-bottom: 15px;
+    border: 1px solid #ddd;
   }
 
   td {
-    border: none;
-    position: relative;
     padding-left: 50%;
+    position: relative;
   }
 
   td::before {
     position: absolute;
     left: 10px;
-    top: 10px;
     font-weight: bold;
   }
 
