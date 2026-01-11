@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Planilha de Opções</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>📊 Planilha de Opções</h1>
+
+    <input 
+        type="text" 
+        id="filtro" 
+        placeholder="🔍 Pesquisar por nome, bairro ou tipologia..."
+    >
+
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nome</th>
+                <th>Bairro</th>
+                <th>Valor</th>
+                <th>Tipologia</th>
+            </tr>
+        </thead>
+        <tbody id="tabela-dados">
+            <!-- Dados inseridos via JavaScript -->
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
