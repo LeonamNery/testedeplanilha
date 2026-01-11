@@ -3,39 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lista de Imóveis</title>
+  <title>GP IMOB | Lista de Imóveis</title>
 
   <link rel="stylesheet" href="./styles/style.css">
   <link rel="stylesheet" href="./styles/responsive.css">
 </head>
 <body>
 
+<header class="topo">
+  <img src="./assets/logo-gp-imob.png" alt="GP IMOB" class="logo">
   <h1>Lista de Imóveis</h1>
+</header>
 
-  <div class="filtros">
-    <input id="search-nome" placeholder="Pesquisar por nome">
-    <input id="search-bairro" placeholder="Pesquisar por bairro">
-    <input id="search-valor" placeholder="Pesquisar por valor">
-    <input id="search-tipologia" placeholder="Pesquisar por tipologia">
+<section class="filtros">
+  <input id="search-nome" placeholder="Pesquisar por nome do imóvel">
+  <input id="search-bairro" placeholder="Pesquisar por bairro">
+  <input id="search-valor" placeholder="Pesquisar por valor">
+  <input id="search-tipologia" placeholder="Pesquisar por tipologia">
 
-    <div class="acoes">
-      <button id="limpar">Limpar filtros</button>
-      <button id="ordenar">Ordenar por valor ⬆⬇</button>
-    </div>
+  <div class="acoes">
+    <button id="limpar">Limpar filtros</button>
+    <button id="ordenar">Ordenar por valor ⬆⬇</button>
   </div>
+</section>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Nome do Imóvel</th>
-        <th>Bairro</th>
-        <th>Valor</th>
-        <th>Tipologia</th>
-      </tr>
-    </thead>
-    <tbody id="tabela-dados"></tbody>
-  </table>
+<table>
+  <thead>
+    <tr>
+      <th>Nome do Imóvel</th>
+      <th>Bairro</th>
+      <th>Valor</th>
+      <th>Tipologia</th>
+    </tr>
+  </thead>
+  <tbody id="tabela-dados"></tbody>
+</table>
 
-  <script src="./scripts/script.js"></script>
+<footer>
+  <p>© GP IMOB · Imóveis de Médio e Alto Padrão</p>
+</footer>
+
+<script src="./scripts/script.js"></script>
 </body>
 </html>

@@ -1,11 +1,9 @@
-/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* FUNDO GERAL */
 body {
   font-family: "Segoe UI", Arial, sans-serif;
   background: linear-gradient(180deg, #070b14, #0b1326);
@@ -13,18 +11,24 @@ body {
   padding: 20px;
 }
 
-/* TÍTULO */
-h1 {
+.topo {
   text-align: center;
-  margin-bottom: 25px;
-  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.logo {
+  max-width: 220px;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 26px;
   letter-spacing: 1px;
 }
 
-/* FILTROS */
 .filtros {
   max-width: 720px;
-  margin: 0 auto 25px auto;
+  margin: 0 auto 25px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -32,22 +36,14 @@ h1 {
 
 .filtros input {
   padding: 12px;
-  font-size: 14px;
-  border-radius: 4px;
   border: 1px solid #c9a24d;
   background: #070b14;
-  color: #ffffff;
+  color: #fff;
 }
 
-.filtros input::placeholder {
-  color: #b5b5b5;
-}
-
-/* AÇÕES */
 .acoes {
   display: flex;
   gap: 10px;
-  margin-top: 5px;
 }
 
 .acoes button {
@@ -55,38 +51,25 @@ h1 {
   padding: 12px;
   background: linear-gradient(135deg, #c9a24d, #e6c27a);
   border: none;
-  color: #070b14;
   font-weight: bold;
   cursor: pointer;
-  border-radius: 4px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
 }
 
-.acoes button:hover {
-  opacity: 0.9;
-}
-
-/* TABELA */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 25px;
-  background: #070b14;
 }
 
-/* CABEÇALHO */
 thead th {
-  background: linear-gradient(135deg, #c9a24d, #e6c27a);
+  background: #c9a24d;
   color: #070b14;
   padding: 14px;
-  text-align: left;
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 13px;
 }
 
-/* LINHAS */
+td {
+  padding: 12px;
+}
+
 tbody tr {
   border-bottom: 1px dotted #2a2f45;
 }
@@ -95,22 +78,13 @@ tbody tr:hover {
   background: #0b1326;
 }
 
-/* CÉLULAS */
-td {
-  padding: 12px;
-  font-size: 14px;
-}
-
-/* NOME DO IMÓVEL EM DESTAQUE */
 td:first-child {
   color: #e6c27a;
   font-weight: bold;
 }
 
-/* FOOTER */
 footer {
-  margin-top: 35px;
+  margin-top: 30px;
   text-align: center;
   color: #b5b5b5;
-  font-size: 13px;
 }
